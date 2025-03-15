@@ -19,13 +19,24 @@
 
 
 
-const inputs = document.querySelectorAll(`input`);
+// const inputs = document.querySelectorAll(`input`);
 
-inputs.forEach(input =>{
-    input.addEventListener(`input`,()=>{
-        const unit = !(input.id===`base`) ? 'px' : "";
-        document.documentElement.style.setProperty(`--${input.id}`, `${input.value}${unit}`);
-    });
-});
+// inputs.forEach(input =>{
+//     input.addEventListener(`input`,()=>{
+//         const unit = !(input.id===`base`) ? 'px' : "";
+//         document.documentElement.style.setProperty(`--${input.id}`, `${input.value}${unit}`);
+//     });
+// });
 
 
+//Wes Bos Solution
+
+const inputs = document.querySelectorAll(`.controls input`);
+console.log(inputs);
+
+function handleUpdate(){
+    const suffix = this.dataset.sizing || "";
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+}
+
+inputs.forEach(input=> input.addEventListener(`input`, handleUpdate));

@@ -80,7 +80,7 @@ body {
 
 .panel.open {
     font-size: 40px;
-    flex: 3;
+    flex: 5;
 }
 
 .panel p:nth-child(odd).translate {

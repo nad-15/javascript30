@@ -77,3 +77,10 @@
       // Sum up the instances of each of these
       const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
   
+      const instances = data.reduce((acc, currentValue) => {
+        // Initialize the count of the current value if it doesn't exist yet
+        acc[currentValue] = (acc[currentValue] || 0) + 1;
+        return acc;
+      }, {});
+      
+      console.log(instances);

@@ -90,5 +90,18 @@
         acc[currentValue] = (acc[currentValue] || 0) + 1;
         return acc;
       }, {});
-      
       console.log(instances);
+
+
+      //Wes Bos Solution
+      // const transportation = data.reduce(function(obj, item) {
+      //   if (!obj[item]) {
+      //     obj[item] = 0;
+      //   }
+      //   obj[item]++;
+      //   return obj;
+      // }, {});
+  
+      // console.log(transportation);
+  
+      

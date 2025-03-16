@@ -83,9 +83,15 @@ body {
     flex: 5;
 }
 
-.panel p:nth-child(odd).translate {
+/* .panel p:nth-child(odd).open-active {
     transform: translateY(0%);
-}
+} */
+
+Wes Bos SOLUTION
+.panel > *:first-child { transform: translateY(-100%); }
+.panel.open-active > *:first-child { transform: translateY(0); }
+.panel > *:last-child { transform: translateY(100%); }
+.panel.open-active > *:last-child { transform: translateY(0); }
 
 
 

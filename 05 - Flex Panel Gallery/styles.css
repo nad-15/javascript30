@@ -78,20 +78,23 @@ body {
     transform: translateY(100%);
 }
 
+.panel p:nth-of-type(odd).open-active {
+    transform: translateY(0%); /* End position - visible */
+}
 .panel.open {
     font-size: 40px;
     flex: 5;
 }
 
-.panel p:nth-child(odd).open-active {
+/* .panel p:nth-of-type(odd).open-active {
     transform: translateY(0%);
-}
+} */
 
 /* Wes Bos SOLUTION */
-/* .panel > *:first-child { transform: translateY(-100%); }
+.panel > *:first-child { transform: translateY(-100%); }
 .panel > *:last-child { transform: translateY(100%); }
 
-.panel.open-active > *:first-child { transform: translateY(0); }
+/* .panel.open-active > *:first-child { transform: translateY(0); }
 .panel.open-active > *:last-child { transform: translateY(0); } */
 
 

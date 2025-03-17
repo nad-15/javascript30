@@ -40,17 +40,19 @@ function toggleOpen(e) {
 function toggleActive(e) {
     // Ensure that the transitionend event is being triggered by the panel's transition
     const panel = this;
-    console.log(panel);
+    console.log(e.propertyName);
     if (!e.propertyName.includes(`flex`)) return;
-    // if (e.propertyName.includes(`transform`)) return;
+    // if (e.propertyName.includes('transform')) return;
+
 
 
     // Select all odd <p> elements inside the current panel
     const paragraphs = panel.querySelectorAll('p:nth-of-type(odd)');
     paragraphs.forEach(p => {
-        console.log(p);
         p.classList.toggle('open-active');
+        console.log(p);
     });
+
 }
 
 

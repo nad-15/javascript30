@@ -9,6 +9,8 @@ const cities = [];
 fetch(endpoint)
     .then(blob => blob.json())
     .then(data => cities.push(...data))
+    .catch(error => console.error("Error fetching data:", error));
+
 
 //add comma to numbers
 function numberWithCommas(x) {
@@ -17,6 +19,8 @@ function numberWithCommas(x) {
 
 
 function findMatch(wordToMatch, cities) {
+    console.log(wordToMatch);
+    // if(wordToMatch === "") return suggestions.innerHTML = "";
 
     return cities
     //Originally used .includes with toLowerCase.. wes bos code is better

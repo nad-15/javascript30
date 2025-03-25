@@ -17,24 +17,19 @@
 
   // Some and Every Checks
   // Array.prototype.some() // is at least one person 19 or older?
-  const isOneOldEnough = people.some(person=> {
-    const date = new Date();
-    const year = date.getFullYear();
-    return (year - person.year) >= 19;
+  const isAdult = people.some(person=> {
+    const currentYear = (new Date()).getFullYear();
+    return (currentYear - person.year) >= 19;
   });
-  console.log("One is Old Enough: ", isOneOldEnough);
+  console.log("One is Old Enough: ", isAdult);
 
   
-
   // Array.prototype.every() // is everyone 19 or older?
-
-
-  const isAllOldEnough = people.every(person=> {
-    const date = new Date();
-    const year = date.getFullYear();
-    return (year - person.year) >= 19;
+  const allAdults = people.every(person=> {
+    const currentYear = (new Date()).getFullYear();
+    return (currentYear - person.year) >= 19;
   });
-  console.log("All is Old Enough: ", isAllOldEnough);
+  console.log("All Adults: ", allAdults);
 
   console.log(
     people.map(person=> {
@@ -59,9 +54,19 @@
   // delete the comment with the ID of 823423
 
   const findIndex = comments.findIndex(comment=> comment.id === 823423);
-  console.log(comments.map((comment,index)=> {
+
+  console.log("Delete comment with id 823423: ",comments.map((comment,index)=> {
     if(findIndex === index){
         delete comment.text;
     }
     return comment;
   }))
+
+//   comments.splice(findIndex, 1);
+const newComments = [
+    ...comments.slice(0, findIndex),
+    ...comments.slice(findIndex + 1)
+];
+
+
+console.log("New Comments: ", newComments);

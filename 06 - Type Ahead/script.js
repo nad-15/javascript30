@@ -20,7 +20,7 @@ function numberWithCommas(x) {
 
 function findMatch(wordToMatch, cities) {
     console.log(wordToMatch);
-    // if(wordToMatch === "") return suggestions.innerHTML = "";
+    if(wordToMatch === "") return suggestions.innerHTML = "";
 
     return cities
     //Originally used .includes with toLowerCase.. wes bos code is better
@@ -34,7 +34,7 @@ function findMatch(wordToMatch, cities) {
 function displayResult() {
     const match = findMatch(this.value, cities);
     console.log(match);
-
+    if(!match) return;
     const html = match.map(place => {
         const regex = new RegExp(this.value, 'gi');
         const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);

@@ -61,10 +61,10 @@
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-      const category = document.querySelector(`.mw-category`);
-      const links =  Array.from(category.querySelectorAll(`a`));
+      // const category = document.querySelector(`.mw-category`);
+      // const links =  Array.from(category.querySelectorAll(`a`));
 
-      const includesDe = links.map(link => link.textContent).filter(boulevard=>boulevard.includes(`de`));
+      // const includesDe = links.map(link => link.textContent).filter(boulevard=>boulevard.includes(`de`));
 
 
 
